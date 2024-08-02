@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Сауна</title>
+</head>
+<body>
+    <form id="sauna_form" action="./index.html" method="POST">
+        <input id="sauna_humans" type="number" min="1" required>
+        <label for="sauna_humans">Количество людей</label>
+
+        <input id="sauna_hours" type="number" min="1" required>
+        <label for="sauna_hours">Количество часов</label>
+
+        <!-- <select name="day_of_week" id="sauna_day">
+            <option value="mo">Понедельник</option>
+            <option value="tu">Вторник</option>
+            <option value="we">Среда</option>
+            <option value="th">Четверг</option>
+            <option value="fr">Пятница</option>
+            <option value="sa">Суббота</option>
+            <option value="su">Воскресенье</option>
+        </select>
+        <label for="sauna_day">День недели</label>
+
+        <select name="day_of_week" id="sauna_day">
+            <option value="mo">1</option>
+            <option value="tu">2</option>
+        </select>
+        <label for="sauna_room">№ Сауны</label> -->
+
+        <button>Посчитать</button>
+    </form>
+    <div id="sauna_cost"></div>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>

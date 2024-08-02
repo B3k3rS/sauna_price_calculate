@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#sauna_form {
+    width: 600px;
+}
+
+#sauna_form label,
+#sauna_form input,
+#sauna_form button,
+#sauna_form select {
+    width: 50%;
+    font: 18px/30px "Arial";
+}
+
+#sauna_form select {
+    height: 30px;
+}
+
+#sauna_form input,
+#sauna_form select {
+    border: 2px solid #6669b0;
+    margin: 10px 15px 0;
+    color: #6669b0;
+    padding-left: 5px;
+    line-height: 26px;
+}
+
+#sauna_form label {
+    color: #6669b0;
+}
+
+#sauna_form button {
+    margin: 10px 15px 0;
+    background: #6669b0;
+    border: none;
+    color: #fff;    
+}
+
+#sauna_cost {
+    margin: 10px 15px 0;
+}
+
+#sauna_cost > p {
+    font: 18px/30px "Arial";
+    color: #6669b0;
+}
