@@ -14,23 +14,29 @@ saunaDataForm.addEventListener('submit', (e) => {
 });
 
 function calculateSaunaCost(humansCounter, hoursCounter) {
-    let pricePerTime;
-    if (hoursCounter == 1) pricePerTime = 120;
-    else if (hoursCounter == 2) pricePerTime = 250;
-    else if (hoursCounter == 3) pricePerTime = 300;
-    else pricePerTime = 350 + (hoursCounter-3) * 100;
+    let cost = getPricePerTime(hoursCounter) + getPricePerShower(humansCounter) + getSuplementPerHumans(humansCounter);
 
-    let suplementPerHumans = 0;
-    if (humansCounter > 4) suplementPerHumans = (humansCounter-4) * 50
-
-    let pricePerShower = humansCounter * 25;
-
-    let cost = pricePerTime + pricePerShower + suplementPerHumans;
-
-    drawSaunaPrice(cost, humansCounter);
+    renderSaunaPrice(cost, humansCounter);
 }
 
-function drawSaunaPrice(cost, humansCounter) {
+function getPricePerTime(hoursCounter) {
+    if (hoursCounter == 1) return 120;
+    else if (hoursCounter == 2) return 250;
+    else if (hoursCounter == 3) return 300;
+    else return 300 + (hoursCounter-3) * 100;
+}
+
+function getPricePerShower(humansCounter) {
+    let showerCost = 25;
+    return showerCost * humansCounter;
+}
+
+function getSuplementPerHumans(humansCounter) {
+    if (humansCounter <= 4) return 0;
+    return (humansCounter - 4) * 50;
+}
+
+function renderSaunaPrice(cost, humansCounter) {
     saunaCostBlock.innerHTML = `
         <p>Общая сумма за баню: ${cost.toFixed(2)} грн</p>
         <p>С каждого человека: ${(cost / humansCounter).toFixed(2)} грн</p>
